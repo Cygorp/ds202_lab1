@@ -1,0 +1,18 @@
+---
+title: "partner_MitchellKazin"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+- Name: Mitchell Kazin
+- github: mitchellkazin15
+
+- The most recent commit was adding answers for lab1.
+
+- I was able to knit the file with no errors.
+
+- One tip for git is to leave good commit messages so you know exactly what was changed.
+
