@@ -5,51 +5,72 @@ output: html_document
 
 # Understanding Concepts 
 
-You may work on this with your partner or individually. 
+## 1. Explain the difference between Git and Github.
 
-  1. Explain the difference between Git and Github.
 Git is a revision control system that is local to your computer. Github is an online repository service that allows you to share and collaborate code with others.
   
-  2. Can Git and Github be used independently? Why don't we do so? Describe the advantages and disadvantages.
-Yes it can be. We don't because 
+## 2. Can Git and Github be used independently? Why don't we do so? Describe the advantages and disadvantages.
 
-  3. What is a repository in Git and how can you create a repository in Git (write out the command(s))? 
+Yes it can be. We don't because they work seemlessly together and they are used together more often than not. There are other good revision control systems that you can use with github that are less cmd terminal based. 
+
+## 3. What is a repository in Git and how can you create a repository in Git (write out the command(s))? 
+ 
 A repository in Git is a directory or storage space where projects are held. You can create a repository locally or through Github.
-1st create a directory by using mkdir in the cmd line 
-2nd 
+1st: create a directory by using mkdir in the cmd line 
+Next: git init the new directory
+And you should have a new Git repository.
+
 
 # Coding Exercises 
 
-  You may work on this with your partner or individually. 
+##1. 
+```{r}
+X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)
+count <- 0
+for (x in X) {
+  if (is.na(x)) {
+    count <- count + 1
+  }
+}
+  print(count)
+```
 
-  1. Write code to count the total number of `NA` occurrences in the vector `X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)`.
+##2.
 
-  2. Run the following code: 
+```{r}
+age = c(25,30,45,60,12,41)
+smoker = c('T','F','T','F','F','F')
+weight = c(120,137,0,168,91,142)
+example_data = data.frame(age,smoker,weight)
+example_data[3,3] <- 150
+example_data
+```
 
-   ```{r}
-   age = c(25,30,45,60,12,41)
-   smoker = c('T','F','T','F','F','F')
-   weight = c(120,137,0,168,91,142)
-   example_data = data.frame(age,smoker,weight)
-   ```
-   
-  This code took three vectors (`age`, `smoker`, and `weight`) and binded them together into an `R` object known as a 
-  `data.frame`. The advantage of `data.frame` is that it can handle vectors of different types. For example, age is a numeric 
-    vector but smoker status is a character vector (T or F). We named this `data.frame` as `example_data`. I obviously made a
-    data entry error: someone cannot have 0 weight. The correct weight should be 150 pounds. Write one line of code that can
-    easily correct this using the `[]` syntax. 
+##3. 
+```{r, eval=FALSE}
+
+avg <- function(x){
+   return(mean(is.na(x)))
+}
 
 
-  3. In the following I have two code snippets. Turn these code snippets into functions. Think about what each function does
-  and what you would name it. How many arguments does it need? 
-  ```{r, eval=FALSE}
-  mean(is.na(x))
-
-  x / sum(x, na.rm = TRUE)
-  ```
+division <- function(x) {
+  return(x/sum(x,na.rm = TRUE))
+}
+```
   
-4. Write a function named `both_na()`. This function take two vectors of the same length and returns the number of positions that have an `NA` value in both vectors. 
-
+##4. Write a function named `both_na()`. This function take two vectors of the same length and returns the number of positions that have an `NA` value in both vectors. 
+```{r, eval=FALSE}
+average <- function(x,y) {
+  count <- 0
+  for (i in length(x)) {
+    if(is.na(x[i]) & is.na(y[i])){
+      count <- count + 1
+    }
+  }
+  return(count)
+}
+```
 # Submission 
 
 Once you have finished Lab 1 and after committing all of your work (don't forget to first 'git add FILENAMES'), you should  push your work to GitHub. 
